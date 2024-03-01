@@ -24,8 +24,11 @@ jobs:
       - name: npm install, build, and test
         run: |
           npm install
+          pnpm i
           npm run build --if-present
           npm run test --if-present
+          npm run bstart --if-present
+          npm i -g pnpm tsx
 
       - name: Zip artifact for deployment
         run: zip release.zip ./* -r
